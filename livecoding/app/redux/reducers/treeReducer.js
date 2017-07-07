@@ -31,10 +31,31 @@ const getStartLife = (state, data) => {
     return newState
 }
 
+const getProduceFruit = (state, data) => {
+    let newState = {
+        ...state,
+        currentHarvest: data
+    }
+    return newState
+}
+
+const getHarvestFruit = (state) => {
+    let newState = {
+        ...state,
+        currentHarvest: 0,
+        countHarvest: state.countHarvest + state.currentHarvest,
+    }
+    return newState
+}
+
 export default function reducer(state = initialState, {type, payload}) {
     switch (type) {
         case actionType.START_LIFE: 
             return getStartLife(state, payload);
+        case actionType.PRODUCE_FRUIT: 
+            return getProduceFruit(state, payload);
+        case actionType.HARVEST_FRUIT: 
+            return getHarvestFruit(state);
         
         default:
             return state;

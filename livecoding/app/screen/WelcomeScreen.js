@@ -32,16 +32,12 @@ const styles = {
         justifyContent: 'center',
         alignItems: 'center',
     },
-    label: {
-        color: 'green',
-        justifyContent: 'center',
-    },
     input: {
         width: 200,
         height: 40,
         backgroundColor: 'skyblue'
     },
-    buttonContainer: {
+    buttonClick: {
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -89,22 +85,22 @@ class WelcomeScreen extends React.Component {
             <View>
                 <Text>User Name</Text>
                 <TextInput
-                style={styles.input}
-                onChangeText={(userName) => this.setState({userName})}
-                value={this.state.userName}
+                    style={styles.input}
+                    onChangeText={(userName) => this.setState({userName})}
+                    value={this.state.userName}
                 />
             </View>
             <View>
                 <Text>Tree Name</Text>
                 <TextInput
-                style={styles.input}
-                onChangeText={(treeName) => this.setState({treeName})}
-                value={this.state.treeName}
+                    style={styles.input}
+                    onChangeText={(treeName) => this.setState({treeName})}
+                    value={this.state.treeName}
                 />
             </View>
-            <View style={styles.buttonContainer}>
+            <View style={styles.buttonClick}>
                 <TouchableOpacity style={styles.button}>
-                <Text onPress={() => this.start() }>Start</Text>
+                    <Text onPress={() => this.start() }>Start</Text>
                 </TouchableOpacity>
                 <Text>{this.state.warningText}</Text>
             </View>
