@@ -17,25 +17,26 @@ const initialState = {
         4: require('../../assets/4.png'),
     },
     selectedImage: require('../../assets/0.png')
-}
+};
 
-const getStartLive = (state, data) => {
+const getStartLife = (state, data) => {
     let newState = {
         ...state,
         userName: data.userName,
-        treeName: data.treeName
+        treeName: data.treeName,
+        actualAge: 0,
+        maxAge: data.maxAge,
+        produceAge: data.bearingAge
     }
     return newState
 }
 
-const treeReducer = (state = initialState, {type, payload}) => {
+export default function reducer(state = initialState, {type, payload}) {
     switch (type) {
-        case actionType.START_LIFE:
-            return getStartLive(state, payload)
-    
+        case actionType.START_LIFE: 
+            return getStartLife(state, payload);
+        
         default:
-            return state
+            return state;
     }
 }
-
-export default treeReducer

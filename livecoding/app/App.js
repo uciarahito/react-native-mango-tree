@@ -1,27 +1,33 @@
-import React from 'react'
+import React from 'react';
 
-import {Provider} from 'react-redux'
+import { 
+    View, 
+    Text 
+} from 'react-native';
 
-import { store } from './redux'
+import { Provider } from 'react-redux';
 
-import { StackNavigator } from 'react-navigation'
+import { StackNavigator } from 'react-navigation';
 
-import WelcomeScreen from './screen/WelcomeScreen'
-import HomeScreen from './screen/HomeScreen'
-import GameOverScreen from './screen/GameOverScreen'
+import store from './redux';
+
+import Welcome from './screen/WelcomeScreen';
+import Home from './screen/HomeScreen';
+import GameOver from './screen/GameOverScreen';
 
 const AppNav = StackNavigator({
-    Welcome: { screen: WelcomeScreen },
-    Home: { screen: HomeScreen },
-    GameOver: { screen: GameOverScreen },
+    Welcome: { screen: Welcome },
+    Home: { screen: Home },
+    GameOver: { screen: GameOver },
 }, { headerMode: 'none' });
+
 
 const App = () => {
     return (
         <Provider store={store}>
             <AppNav />
         </Provider>
-    )
+    );
 }
 
-export default App
+export default App;
