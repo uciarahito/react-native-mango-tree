@@ -1,0 +1,5 @@
+export const START_LIFE = 'START_LIFE'
+export const PRODUCE_FRUIT = 'PRODUCE_FRUIT'
+export const HARVEST_FRUIT = 'HARVEST_FRUIT'
+export const IS_HEALTHY = 'IS_HEALTHY'
+export const ADD_AGE = 'ADD_AGE'
